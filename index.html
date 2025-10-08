@@ -6,7 +6,6 @@
     <title>Mundo de Polarcsx Multitienda</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* Reset básico */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -16,7 +15,6 @@
             line-height: 1.6;
         }
 
-        /* Encabezado */
         header {
             position: relative;
             text-align: center;
@@ -25,15 +23,16 @@
             overflow: hidden;
         }
 
+        /* Logo de fondo: asegúrate de subir logo.png a la raíz */
         header::before {
             content: "";
             background: url('logo.png') no-repeat center center/contain;
             opacity: 0.08;
+            position: absolute;
             top: 0;
             left: 0;
             bottom: 0;
             right: 0;
-            position: absolute;
             z-index: 0;
             filter: drop-shadow(0 0 10px #ffd700);
             animation: slowRotate 60s linear infinite;
@@ -51,16 +50,8 @@
             color: #ffffff;
             z-index: 1;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7), 0 0 10px #ffd700;
-            animation: flicker 2s infinite alternate;
         }
 
-        @keyframes flicker {
-            0% { opacity: 1; }
-            50% { opacity: 0.85; }
-            100% { opacity: 1; }
-        }
-
-        /* Barra de navegación */
         nav {
             display: flex;
             justify-content: center;
@@ -90,22 +81,17 @@
         }
 
         nav a:hover { color: #00ffff; }
-
         nav a:hover::after { width: 100%; }
 
-        /* Sección principal */
         main {
             padding: 50px 20px;
             text-align: center;
         }
 
         main h2 { color: #ffd700; margin-bottom: 20px; text-shadow: 1px 1px 5px #000; }
-
         main p { max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1em; }
 
-        /* Redes sociales */
         .social-icons { margin: 30px 0; }
-
         .social-icons a {
             color: #e0e0e0;
             font-size: 1.8em;
@@ -113,14 +99,12 @@
             transition: all 0.4s ease;
             text-shadow: 0 0 5px #000;
         }
-
         .social-icons a:hover {
             color: #00ffff;
             text-shadow: 0 0 15px #00ffff, 0 0 25px #ffd700;
             transform: scale(1.2);
         }
 
-        /* Pie de página */
         footer {
             background-color: #111111;
             color: #888888;
@@ -170,29 +154,5 @@
         <a href="https://midoriyaizuku387-ctrl.github.io/Polarcsxoficial-/acerca.html" target="_blank">Acerca de</a>
         <p>© 2025 Polarcsx Oficial. Todos los derechos reservados.</p>
     </footer>
-</body>
-</html>    <a href="#">Bocinas</a>
-    <a href="#">Cargadores</a>
-</nav>
-
-<main>
-    <p>Bienvenido a Polarcsxoficial. Aquí encontrarás todos nuestros productos y novedades.</p>
-</main>
-
-<div class="social-links">
-    <a href="https://www.facebook.com/share/1J9f7LiZbG/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/polarcs_x?igsh=dDlqdHVlcWxmb21t" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/Polar_cs_edits?t=zmRtc-Ouh-SXFrHU7qvNwA&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.tiktok.com/@polarcsxxx?_t=ZS-90EfhS38516&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://youtube.com/@polarcsuwu?si=p2RW2r7J-G-7raKY" target="_blank"><i class="fab fa-youtube"></i></a>
-</div>
-
-<footer>
-    <a href="privacidad.html" target="_blank">Aviso de Privacidad</a> | 
-    <a href="cookies.html" target="_blank">Política de Cookies</a> | 
-    <a href="acerca.html" target="_blank">Acerca de</a>
-    <p>&copy; 2025 Mundo de Polarcsx. Todos los derechos reservados.</p>
-</footer>
-
 </body>
 </html>
