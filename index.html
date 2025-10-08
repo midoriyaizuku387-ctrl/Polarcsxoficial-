@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mundo de Polarcsx Multitienda</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+
+/* Header con logo de fondo y animaciones */
+header {
+    position: relative;
+    text-align: center;
+    padding: 120px 20px 60px 20px;
+    background-color: #0a0a0a;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    background: url('assets/img/logo.png') no-repeat center center/contain; /* Logo del oso */
+    opacity: 0.08;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 0;
+    filter: drop-shadow(0 0 10px #ffd700);
+    animation: slowRotate 60s linear infinite;
+}
+
+header h1 {
+    position: relative;
+    font-size: 3em;
+    color: #ffd700;
+    z-index: 1;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.7), 0 0 15px #ffd700;
+    animation: fadeSlideDown 1s ease-out forwards;
+    opacity: 0;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #cccccc;
+    margin: 15px auto 0 auto;
+    max-width: 600px;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0;
+    animation: fadeSlideUp 1s 0.5s ease-out forwards;
+}
+
+/* Animaciones */
+@keyframes fadeSlideDown {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slowRotate {
+    0% { transform: rotate(0deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(1.15); }
+    100% { transform: rotate(360deg) scale(1.1); }
+}
+
+/* Navegación */
+nav { display: flex; justify-content: center; background-color: #111111; padding: 15px 0; }
+nav a { color: #e0e0e0; text-decoration: none; margin: 0 20px; font-weight: bold; position: relative; transition: color 0.3s; }
+nav a::after { content: ""; display: block; height: 2px; width: 0; background: #ffd700; transition: width 0.3s; position: absolute; bottom: -5px; left: 0; }
+nav a:hover { color: #00ffff; }
+nav a:hover::after { width: 100%; }
+
+/* Main */
+main { padding: 50px 20px; text-align: center; }
+
+/* Redes sociales */
+.social-icons { margin: 30px 0; }
+.social-icons a {
+    color: #e0e0e0; font-size: 1.8em; margin: 0 12px; transition: all 0.4s ease; text-shadow: 0 0 5px #000;
+}
+.social-icons a:hover { color: #00ffff; text-shadow: 0 0 15px #00ffff, 0 0 25px #ffd700; transform: scale(1.2); }
+
+/* Footer */
+footer { background-color: #111111; color: #888888; padding: 25px; text-align: center; }
+footer a { color: #ffd700; text-decoration: none; margin: 0 12px; transition: color 0.3s; cursor: pointer; }
+footer a:hover { color: #00ffff; text-decoration: underline; }
+
+/* Modales */
+.modal {
+    display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%;
+    overflow: auto; background-color: rgba(0,0,0,0.8); animation: fadeIn 0.4s;
+}
+.modal-content {
+    background-color: #1a1a1a; margin: 10% auto; padding: 20px; border-radius: 10px;
+    width: 90%; max-width: 700px; color: #e0e0e0; position: relative;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #ffd700;
+    animation: slideDown 0.5s;
+}
+.close {
+    color: #00ffff; position: absolute; top: 10px; right: 20px; font-size: 1.5em; font-weight: bold; cursor: pointer;
+    transition: color 0.3s;
+}
+.close:hover { color: #ffd700; }
+
+@keyframes fadeIn { from {opacity:0} to {opacity:1} }
+@keyframes slideDown { from {transform: translateY(-50px); opacity:0} to {transform: translateY(0); opacity:1} }
+</style>
+</head>
+<body>
+<header>
+    <h1>Mundo de Polarcsx Multitienda</h1>
+    <p>Encuentra los mejores accesorios tecnológicos con estilo y calidad premium. Diseñados para los amantes de la tecnología que buscan elegancia y rendimiento en cada producto.</p>
+</header>
+
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Teclados</a>
+    <a href="#">Audífonos</a>
+    <a href="#">Bocinas</a>
+    <a href="#">Cargadores</a>
+</nav>
+
+<main>
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/@polarcsx" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/polarcsx" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/polarcsx" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@polarcsx" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitter.com/polarcsx" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+</main>
+
+<footer>
+    <a id="btnAcerca">Acerca de</a> |
+    <a id="btnPrivacidad">Aviso de privacidad</a> |
+    <a id="btnCookies">Política de cookies</a>
+    <p>© 2025 Polarcsx Oficial. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Modales -->
+<div id="modalAcerca" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="modalAcerca">&times;</span>
+        <h2>Acerca de Polarcsx</h2>
+        <p>Bienvenido a Polarcsxoficial, tu multitienda de tecnología y accesorios. Aquí podrás explorar nuestros productos, novedades y ofertas exclusivas.</p>
+    </div>
+</div>
+
+<div id="modalPrivacidad" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="modalPrivacidad">&times;</span>
+        <h2>Aviso de Privacidad</h2>
+        <p>Este es un aviso de privacidad temporal. Se recopilan datos mínimos para mejorar la experiencia de navegación y mostrar productos relevantes.</p>
+    </div>
+</div>
+
+<div id="modalCookies" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="modalCookies">&times;</span>
+        <h2>Política de Cookies</h2>
+        <p>Este sitio utiliza cookies para mejorar la experiencia de navegación y mostrar contenido relevante. Puedes configurar tu navegador según tu preferencia.</p>
+    </div>
+</div>
+
+<script>
+function openModal(id) { document.getElementById(id).style.display = "block"; }
+document.getElementById("btnAcerca").onclick = () => openModal("modalAcerca");
+document.getElementById("btnPrivacidad").onclick = () => openModal("modalPrivacidad");
+document.getElementById("btnCookies").onclick = () => openModal("modalCookies");
+document.querySelectorAll(".close").forEach(btn => {
+    btn.onclick = () => { document.getElementById(btn.dataset.modal).style.display = "none"; }
+});
+window.onclick = e => {
+    document.querySelectorAll(".modal").forEach(modal => { if(e.target == modal) modal.style.display = "none"; });
+}
+</script>
+</body>
+</html>
